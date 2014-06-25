@@ -39,8 +39,8 @@
       <file leaf-file-name="PlayerListener.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/listeners/PlayerListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="1581">
-              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1581">
+              <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1798#1799#0" expanded="true" />
@@ -53,12 +53,12 @@
       <file leaf-file-name="EditUsersCommand.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51462996" vertical-offset="279" max-vertical-offset="1224">
-              <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.17555939" vertical-offset="306" max-vertical-offset="1207">
+              <caret line="24" column="191" selection-start-line="24" selection-start-column="191" selection-end-line="24" selection-end-column="191" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#971#979#0" expanded="true" />
-                <element signature="e#1029#1037#0" expanded="true" />
+                <element signature="e#937#945#0" expanded="true" />
+                <element signature="e#995#1003#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,7 +67,7 @@
       <file leaf-file-name="CancelCommand.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CancelCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="748">
+            <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="663">
               <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
@@ -564,7 +564,11 @@
       <created>1403677368220</created>
       <updated>1403677368220</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <created>1403677380709</created>
+      <updated>1403677380709</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -745,14 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CancelCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="748">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/TestCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="459">
@@ -808,10 +804,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CancelCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="748">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/listeners/PlayerListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="1581">
-          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1581">
+          <caret line="89" column="0" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1798#1799#0" expanded="true" />
@@ -822,12 +826,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51462996" vertical-offset="279" max-vertical-offset="1224">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.17555939" vertical-offset="306" max-vertical-offset="1207">
+          <caret line="24" column="191" selection-start-line="24" selection-start-column="191" selection-end-line="24" selection-end-column="191" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#971#979#0" expanded="true" />
-            <element signature="e#1029#1037#0" expanded="true" />
+            <element signature="e#937#945#0" expanded="true" />
+            <element signature="e#995#1003#0" expanded="true" />
           </folding>
         </state>
       </provider>
