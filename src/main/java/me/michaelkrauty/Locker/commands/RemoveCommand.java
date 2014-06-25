@@ -26,11 +26,11 @@ public class RemoveCommand {
 			player.sendMessage(ChatColor.GRAY + "Make sure you're looking at a " + ChatColor.GREEN + "chest" + ChatColor.GRAY + " within " + ChatColor.GREEN + "10 blocks" + ChatColor.GRAY + " of you");
 			return;
 		}
-		if (main.getDataFile().getString(main.locationToString(targetBlockLocation)) == null) {
+		if (main.getDataFile().getString(main.locationToString(targetBlockLocation) + ".owner") == null) {
 			player.sendMessage(ChatColor.GRAY + "That chest isn't locked!");
 			return;
 		}
-		if (!main.getDataFile().getString(main.locationToString(targetBlockLocation)).split(",")[0].equals(player.getUniqueId().toString())) {
+		if (!main.getDataFile().getString(main.locationToString(targetBlockLocation) + ".owner").equals(player.getUniqueId().toString())) {
 			player.sendMessage(ChatColor.GRAY + "You don't own that chest!");
 			return;
 		}

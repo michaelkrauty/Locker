@@ -32,11 +32,11 @@ public class LockerCommand implements CommandExecutor {
 			log.info("You can't lock chests!");
 			return true;
 		}
+		Player player = (Player) sender;
 		if (args.length < 1) {
-			sender.sendMessage(ChatColor.GRAY + "Try \"/locker help\" to use this command.");
+			new HelpCommand(main, player, cmd, commandLabel, args);
 			return true;
 		}
-		Player player = (Player) sender;
 
 		/** locker commands */
 		if (args[0].equalsIgnoreCase("create") || args[0].equalsIgnoreCase("lock") || args[0].equalsIgnoreCase("claim")) {
@@ -56,7 +56,7 @@ public class LockerCommand implements CommandExecutor {
 			return true;
 		}
 
-		sender.sendMessage(ChatColor.GRAY + "Unknown command! Use \"/locker help\" to use this command.");
+		new HelpCommand(main, player, cmd, commandLabel, args);
 		return true;
 	}
 }

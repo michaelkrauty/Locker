@@ -30,7 +30,7 @@ public class PlayerListener implements Listener {
 			if (event.getClickedBlock().getType() == Material.CHEST) {
 				if (isProtected(event.getClickedBlock().getLocation())) {
 					if (!playerHasAccess(event.getPlayer(), event.getClickedBlock().getLocation())) {
-						event.getPlayer().sendMessage(ChatColor.GRAY + "This chest is owned by " + getChestOwner(event.getClickedBlock().getLocation()));
+						event.getPlayer().sendMessage(ChatColor.GRAY + "This chest is owned by " + main.getDataFile().getString(event.getClickedBlock().getLocation() + ".owner"));
 						event.setCancelled(true);
 					}
 				}
@@ -40,7 +40,7 @@ public class PlayerListener implements Listener {
 	}
 
 	private boolean isProtected(Location loc) {
-		if (main.getDataFile().getString(main.locationToString(loc)) != null) {
+		if (main.getDataFile().getString(main.locationToString(loc) + ".owner") != null) {
 			return true;
 		}
 		return false;
@@ -48,15 +48,11 @@ public class PlayerListener implements Listener {
 
 	private boolean playerHasAccess(Player player, Location loc) {
 		boolean access = false;
-		for (String str : main.getDataFile().getString(main.locationToString(loc)).split(",")) {
+		for (String str : main.getDataFile().getString(main.locationToString(loc) + ".users").split(",")) {
 			if (str.equalsIgnoreCase(player.getUniqueId().toString())) {
 				access = true;
 			}
 		}
 		return access;
-	}
-
-	private String getChestOwner(Location loc) {
-		return main.getServer().getOfflinePlayer(UUID.fromString(main.getDataFile().getString(main.locationToString(loc)).split(",")[0])).getName();
 	}
 }

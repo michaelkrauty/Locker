@@ -29,7 +29,7 @@ public class BlockListener implements Listener {
 		Block block = event.getBlock();
 		Location blockLocation = block.getLocation();
 		if (block.getType() == Material.CHEST) {
-			if (main.getDataFile().getString(main.locationToString(blockLocation)) != null) {
+			if (main.getDataFile().getString(main.locationToString(blockLocation) + ".owner") != null) {
 				main.getDataFile().delete(main.locationToString(blockLocation));
 				event.getPlayer().sendMessage(ChatColor.GRAY + "Removed locker.");
 			}
@@ -50,16 +50,16 @@ public class BlockListener implements Listener {
 			Location loc3 = new Location(w, x, y, z + 1);
 			Location loc4 = new Location(w, x, y, z - 1);
 			if (main.getDataFile().getString(main.locationToString(loc1)) != null) {
-				main.getDataFile().set(main.locationToString(blockLocation), main.getDataFile().getString(main.locationToString(loc1)));
+				main.copyStats(blockLocation, loc1);
 			}
 			if (main.getDataFile().getString(main.locationToString(loc2)) != null) {
-				main.getDataFile().set(main.locationToString(blockLocation), main.getDataFile().getString(main.locationToString(loc2)));
+				main.copyStats(blockLocation, loc2);
 			}
 			if (main.getDataFile().getString(main.locationToString(loc3)) != null) {
-				main.getDataFile().set(main.locationToString(blockLocation), main.getDataFile().getString(main.locationToString(loc3)));
+				main.copyStats(blockLocation, loc3);
 			}
 			if (main.getDataFile().getString(main.locationToString(loc4)) != null) {
-				main.getDataFile().set(main.locationToString(blockLocation), main.getDataFile().getString(main.locationToString(loc4)));
+				main.copyStats(blockLocation, loc4);
 			}
 		}
 	}
