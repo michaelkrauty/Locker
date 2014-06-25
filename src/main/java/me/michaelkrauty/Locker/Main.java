@@ -28,7 +28,7 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new PlayerListener(this), this);
 		pm.registerEvents(new BlockListener(this), this);
 		checkDataFolder();
-		dataFile = new DataFile(this);
+		dataFile = new DataFile();
 	}
 
 	public void checkDataFolder() {

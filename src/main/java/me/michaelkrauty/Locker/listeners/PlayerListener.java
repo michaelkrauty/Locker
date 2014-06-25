@@ -43,7 +43,6 @@ public class PlayerListener implements Listener {
 		return false;
 	}
 
-	// TODO
 	private boolean playerHasAccess(Player player, Location loc) {
 		boolean access = false;
 		for (String str : main.getDataFile().getString(main.locationToString(loc)).split(",")) {

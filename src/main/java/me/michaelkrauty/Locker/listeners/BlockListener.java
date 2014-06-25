@@ -9,8 +9,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
-import java.util.logging.Logger;
-
 /**
  * Created on 6/24/2014.
  *
@@ -19,8 +17,6 @@ import java.util.logging.Logger;
 public class BlockListener implements Listener {
 
 	private static Main main;
-
-	private static Logger log = Logger.getLogger("MC");
 
 	public BlockListener(Main instance) {
 		main = instance;

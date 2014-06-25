@@ -15,13 +15,10 @@ import java.util.List;
  */
 public class DataFile {
 
-	private static Main main;
-
 	private File dataFile = new File(Main.main.getDataFolder() + "/data.yml");
 	private YamlConfiguration data = new YamlConfiguration();
 
-	public DataFile(Main instance) {
-		main = instance;
+	public DataFile() {
 		checkFile();
 		reload();
 	}
@@ -60,14 +57,6 @@ public class DataFile {
 
 	public String getString(String path) {
 		return data.getString(path);
-	}
-
-	public boolean getBoolean(String path) {
-		return data.getBoolean(path);
-	}
-
-	public List getList(String path) {
-		return data.getList(path);
 	}
 
 	public void delete(String path) {
