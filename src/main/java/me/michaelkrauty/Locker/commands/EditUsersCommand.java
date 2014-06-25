@@ -4,6 +4,7 @@ import me.michaelkrauty.Locker.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 
@@ -56,6 +57,32 @@ public class EditUsersCommand {
 					}
 				}
 				main.getDataFile().set(main.locationToString(targetBlockLocation), main.getDataFile().getString(main.locationToString(targetBlockLocation)) + "," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString());
+
+
+				/** check for other chests */
+				World w = targetBlockLocation.getWorld();
+				int x = targetBlockLocation.getBlockX();
+				int y = targetBlockLocation.getBlockY();
+				int z = targetBlockLocation.getBlockZ();
+				if (w.getBlockAt(x + 1, y, z).getType() == Material.CHEST) {
+					Location loc = new Location(w, x + 1, y, z);
+					main.getDataFile().set(main.locationToString(loc), main.getDataFile().getString(main.locationToString(loc)) + "," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString());
+				}
+				if (w.getBlockAt(x - 1, y, z).getType() == Material.CHEST) {
+					Location loc = new Location(w, x - 1, y, z);
+					main.getDataFile().set(main.locationToString(loc), main.getDataFile().getString(main.locationToString(loc)) + "," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString());
+				}
+				if (w.getBlockAt(x, y, z + 1).getType() == Material.CHEST) {
+					Location loc = new Location(w, x, y, z + 1);
+					main.getDataFile().set(main.locationToString(loc), main.getDataFile().getString(main.locationToString(loc)) + "," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString());
+				}
+				if (w.getBlockAt(x, y, z - 1).getType() == Material.CHEST) {
+					Location loc = new Location(w, x, y, z - 1);
+					main.getDataFile().set(main.locationToString(loc), main.getDataFile().getString(main.locationToString(loc)) + "," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString());
+				}
+				/** /check for other chests */
+
+
 				player.sendMessage(ChatColor.GRAY + "Added the player " + args[2] + " to the locker.");
 			}
 			if (args[1].equalsIgnoreCase("remove")) {
@@ -66,6 +93,32 @@ public class EditUsersCommand {
 					}
 				}
 				main.getDataFile().set(main.locationToString(targetBlockLocation), main.getDataFile().getString(main.locationToString(targetBlockLocation)).replace("," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString(), ""));
+
+
+				/** check for other chests */
+				World w = targetBlockLocation.getWorld();
+				int x = targetBlockLocation.getBlockX();
+				int y = targetBlockLocation.getBlockY();
+				int z = targetBlockLocation.getBlockZ();
+				if (w.getBlockAt(x + 1, y, z).getType() == Material.CHEST) {
+					Location loc = new Location(w, x + 1, y, z);
+					main.getDataFile().set(main.locationToString(loc), main.getDataFile().getString(main.locationToString(loc)).replace("," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString(), ""));
+				}
+				if (w.getBlockAt(x - 1, y, z).getType() == Material.CHEST) {
+					Location loc = new Location(w, x - 1, y, z);
+					main.getDataFile().set(main.locationToString(loc), main.getDataFile().getString(main.locationToString(loc)).replace("," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString(), ""));
+				}
+				if (w.getBlockAt(x, y, z + 1).getType() == Material.CHEST) {
+					Location loc = new Location(w, x, y, z + 1);
+					main.getDataFile().set(main.locationToString(loc), main.getDataFile().getString(main.locationToString(loc)).replace("," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString(), ""));
+				}
+				if (w.getBlockAt(x, y, z - 1).getType() == Material.CHEST) {
+					Location loc = new Location(w, x, y, z - 1);
+					main.getDataFile().set(main.locationToString(loc), main.getDataFile().getString(main.locationToString(loc)).replace("," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString(), ""));
+				}
+				/** /check for other chests */
+
+
 				player.sendMessage(ChatColor.GRAY + "Removed the player " + args[2] + " from the locker.");
 			}
 		}

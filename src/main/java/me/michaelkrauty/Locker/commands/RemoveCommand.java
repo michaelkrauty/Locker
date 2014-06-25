@@ -4,6 +4,7 @@ import me.michaelkrauty.Locker.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
@@ -34,6 +35,26 @@ public class RemoveCommand {
 			return;
 		}
 		main.getDataFile().delete(main.locationToString(targetBlockLocation));
+		World w = targetBlockLocation.getWorld();
+		int x = targetBlockLocation.getBlockX();
+		int y = targetBlockLocation.getBlockY();
+		int z = targetBlockLocation.getBlockZ();
+		if (w.getBlockAt(x + 1, y, z).getType() == Material.CHEST) {
+			Location loc = new Location(w, x + 1, y, z);
+			main.getDataFile().delete(main.locationToString(loc));
+		}
+		if (w.getBlockAt(x - 1, y, z).getType() == Material.CHEST) {
+			Location loc = new Location(w, x - 1, y, z);
+			main.getDataFile().delete(main.locationToString(loc));
+		}
+		if (w.getBlockAt(x, y, z + 1).getType() == Material.CHEST) {
+			Location loc = new Location(w, x, y, z + 1);
+			main.getDataFile().delete(main.locationToString(loc));
+		}
+		if (w.getBlockAt(x, y, z - 1).getType() == Material.CHEST) {
+			Location loc = new Location(w, x, y, z - 1);
+			main.getDataFile().delete(main.locationToString(loc));
+		}
 		player.sendMessage(ChatColor.GRAY + "You successfully removed the lock from that chest.");
 	}
 }

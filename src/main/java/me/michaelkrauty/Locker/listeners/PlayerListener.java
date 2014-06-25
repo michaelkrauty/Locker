@@ -26,14 +26,16 @@ public class PlayerListener implements Listener {
 
 	@EventHandler
 	public void onPlayerInteract(PlayerInteractEvent event) {
-		if (event.getClickedBlock().getType() == Material.CHEST) {
-			if (isProtected(event.getClickedBlock().getLocation())) {
-				if (!playerHasAccess(event.getPlayer(), event.getClickedBlock().getLocation())) {
-					event.getPlayer().sendMessage(ChatColor.GRAY + "This chest is owned by " + getChestOwner(event.getClickedBlock().getLocation()));
-					event.setCancelled(true);
+		try {
+			if (event.getClickedBlock().getType() == Material.CHEST) {
+				if (isProtected(event.getClickedBlock().getLocation())) {
+					if (!playerHasAccess(event.getPlayer(), event.getClickedBlock().getLocation())) {
+						event.getPlayer().sendMessage(ChatColor.GRAY + "This chest is owned by " + getChestOwner(event.getClickedBlock().getLocation()));
+						event.setCancelled(true);
+					}
 				}
 			}
-		}
+		} catch (Exception ignored) {}
 	}
 
 	private boolean isProtected(Location loc) {
