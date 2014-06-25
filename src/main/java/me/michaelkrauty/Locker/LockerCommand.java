@@ -1,6 +1,9 @@
 package me.michaelkrauty.Locker;
 
-import me.michaelkrauty.Locker.commands.*;
+import me.michaelkrauty.Locker.commands.CreateCommand;
+import me.michaelkrauty.Locker.commands.EditUsersCommand;
+import me.michaelkrauty.Locker.commands.HelpCommand;
+import me.michaelkrauty.Locker.commands.RemoveCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

@@ -9,10 +9,6 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.logging.Logger;
-
 /**
  * Created on 6/24/2014.
  *
