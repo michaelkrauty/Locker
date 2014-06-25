@@ -22,8 +22,8 @@ public class EditUsersCommand {
 	public EditUsersCommand(Main instance, Player player, Command cmd, String commandLabel, String[] args) {
 		main = instance;
 		if (player.getTargetBlock(null, 10).getType() != Material.CHEST) {
-				player.sendMessage(ChatColor.GRAY + "Make sure you're looking at a chest within 10 blocks of you");
-				player.sendMessage(ChatColor.GRAY + "Use " + ChatColor.RED + "/locker cancel" + ChatColor.GRAY + " to cancel editing.");
+			player.sendMessage(ChatColor.GRAY + "Make sure you're looking at a chest within 10 blocks of you");
+			player.sendMessage(ChatColor.GRAY + "Use " + ChatColor.RED + "/locker cancel" + ChatColor.GRAY + " to cancel editing.");
 			return;
 		} else {
 			Location targetBlockLocation = player.getTargetBlock(null, 10).getLocation();
