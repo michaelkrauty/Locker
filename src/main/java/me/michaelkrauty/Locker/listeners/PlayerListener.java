@@ -51,18 +51,6 @@ public class PlayerListener implements Listener {
 		}
 	}
 
-	private void addChest(Player player, Location chest1, Location chest2) {
-		String world1 = chest1.getWorld().getName();
-		int x1 = chest1.getBlockX();
-		int y1 = chest1.getBlockY();
-		int z1 = chest1.getBlockZ();
-		String world2 = chest2.getWorld().getName();
-		int x2 = chest2.getBlockX();
-		int y2 = chest2.getBlockY();
-		int z2 = chest2.getBlockZ();
-		main.getDataFile().set(world1 + "," + x1 + "," + y1 + "," + z1 + "," + world2 + "," + x2 + "," + y2 + "," + z2, player.getUniqueId().toString());
-	}
-
 	private boolean isProtected(Location loc) {
 		return (main.getDataFile().getString(main.locationToString(loc)) != null);
 	}
