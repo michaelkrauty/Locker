@@ -1,0 +1,8 @@
+name: Locker
+version: 1.0
+author: michaelkrauty
+main: me.michaelkrauty.Locker.Main
+commands:
+  locker:
+    description: The locker command
+    usage: /locker <args>
