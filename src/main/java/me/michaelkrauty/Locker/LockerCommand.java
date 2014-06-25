@@ -36,11 +36,11 @@ public class LockerCommand implements CommandExecutor {
 		Player player = (Player) sender;
 
 		/** locker commands */
-		if (args[0].equalsIgnoreCase("create") || args[0].equalsIgnoreCase("lock")) {
+		if (args[0].equalsIgnoreCase("create") || args[0].equalsIgnoreCase("lock") || args[0].equalsIgnoreCase("claim")) {
 			new CreateCommand(main, player, cmd, commandLabel, args);
 			return true;
 		}
-		if (args[0].equalsIgnoreCase("delete") || args[0].equalsIgnoreCase("unlock")) {
+		if (args[0].equalsIgnoreCase("delete") || args[0].equalsIgnoreCase("unlock") || args[0].equalsIgnoreCase("unclaim")) {
 			new RemoveCommand(main, player, cmd, commandLabel, args);
 			return true;
 		}

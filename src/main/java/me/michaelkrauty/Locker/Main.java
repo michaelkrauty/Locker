@@ -1,5 +1,6 @@
 package me.michaelkrauty.Locker;
 
+import me.michaelkrauty.Locker.listeners.BlockListener;
 import me.michaelkrauty.Locker.listeners.PlayerListener;
 import org.bukkit.Location;
 import org.bukkit.plugin.PluginManager;
@@ -30,6 +31,7 @@ public class Main extends JavaPlugin {
 		getCommand("locker").setExecutor(new LockerCommand(this));
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(new PlayerListener(this), this);
+		pm.registerEvents(new BlockListener(this), this);
 		checkDataFolder();
 		dataFile = new DataFile(this);
 	}

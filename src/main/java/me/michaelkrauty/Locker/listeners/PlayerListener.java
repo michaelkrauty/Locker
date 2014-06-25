@@ -51,11 +51,6 @@ public class PlayerListener implements Listener {
 		}
 	}
 
-	@EventHandler
-	public void onBlockBreakEvent(BlockBreakEvent event) {
-		Location blockLocation = event.getBlock().getLocation();
-	}
-
 	private void addChest(Player player, Location chest1, Location chest2) {
 		String world1 = chest1.getWorld().getName();
 		int x1 = chest1.getBlockX();
