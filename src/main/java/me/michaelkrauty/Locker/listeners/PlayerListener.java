@@ -4,15 +4,12 @@ import me.michaelkrauty.Locker.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 import java.util.UUID;
-import java.util.logging.Logger;
 
 /**
  * Created on 6/24/2014.
@@ -23,24 +20,12 @@ public class PlayerListener implements Listener {
 
 	private static Main main;
 
-	private static Logger log = Logger.getLogger("MC");
-
 	public PlayerListener(Main instance) {
 		main = instance;
 	}
 
 	@EventHandler
 	public void onPlayerInteract(PlayerInteractEvent event) {
-		// event.getPlayer().sendMessage(ChatColor.GRAY + "https://sessionserver.mojang.com/session/minecraft/profile/" + event.getPlayer().getUniqueId().toString());
-		if (main.createQueue.contains(event.getPlayer().getUniqueId().toString())) {
-			main.createQueue.remove(event.getPlayer().getUniqueId().toString());
-
-			Block chest1 = event.getClickedBlock();
-			Location chest1Location = chest1.getLocation();
-			int chest1x = chest1Location.getBlockX();
-			int chest1y = chest1Location.getBlockY();
-			int chest1z = chest1Location.getBlockZ();
-		}
 		if (event.getClickedBlock().getType() == Material.CHEST) {
 			if (isProtected(event.getClickedBlock().getLocation())) {
 				if (!playerHasAccess(event.getPlayer(), event.getClickedBlock().getLocation())) {
@@ -52,7 +37,10 @@ public class PlayerListener implements Listener {
 	}
 
 	private boolean isProtected(Location loc) {
-		return (main.getDataFile().getString(main.locationToString(loc)) != null);
+		if (main.getDataFile().getString(main.locationToString(loc)) != null) {
+			return true;
+		}
+		return false;
 	}
 
 	// TODO

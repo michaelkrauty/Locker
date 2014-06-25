@@ -21,11 +21,6 @@ public class Main extends JavaPlugin {
 
 	public static DataFile dataFile;
 
-	public static Logger log = Logger.getLogger("MC");
-
-	public static ArrayList<String> createQueue = new ArrayList<String>();
-	public static ArrayList<String> delQueue = new ArrayList<String>();
-
 	public void onEnable() {
 		main = this;
 		getCommand("locker").setExecutor(new LockerCommand(this));
