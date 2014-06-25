@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bab39339-cdcc-4b3e-957e-b2a63a14da09" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/listeners/PlayerListener.java" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/listeners/PlayerListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/TestCommand.java" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/TestCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Locker.iws" />
@@ -56,12 +54,12 @@
       <file leaf-file-name="EditUsersCommand.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8244406" vertical-offset="592" max-vertical-offset="1275">
-              <caret line="63" column="96" selection-start-line="63" selection-start-column="96" selection-end-line="63" selection-end-column="96" />
+            <state vertical-scroll-proportion="0.6781411" vertical-offset="575" max-vertical-offset="1258">
+              <caret line="57" column="106" selection-start-line="57" selection-start-column="106" selection-end-line="57" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1077#1085#0" expanded="true" />
-                <element signature="e#1135#1143#0" expanded="true" />
+                <element signature="e#1049#1057#0" expanded="true" />
+                <element signature="e#1107#1115#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -545,6 +543,11 @@
       <created>1403639625954</created>
       <updated>1403639625954</updated>
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1403676540166</created>
+      <updated>1403676540166</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -564,7 +567,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10341151" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10341151" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14179105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -619,7 +622,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -800,12 +804,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8244406" vertical-offset="592" max-vertical-offset="1275">
-          <caret line="63" column="96" selection-start-line="63" selection-start-column="96" selection-end-line="63" selection-end-column="96" />
+        <state vertical-scroll-proportion="0.6781411" vertical-offset="575" max-vertical-offset="1258">
+          <caret line="57" column="106" selection-start-line="57" selection-start-column="106" selection-end-line="57" selection-end-column="106" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1077#1085#0" expanded="true" />
-            <element signature="e#1135#1143#0" expanded="true" />
+            <element signature="e#1049#1057#0" expanded="true" />
+            <element signature="e#1107#1115#0" expanded="true" />
           </folding>
         </state>
       </provider>
