@@ -35,7 +35,8 @@ public class PlayerListener implements Listener {
 					}
 				}
 			}
-		} catch (Exception ignored) {}
+		} catch (Exception ignored) {
+		}
 	}
 
 	private boolean isProtected(Location loc) {
