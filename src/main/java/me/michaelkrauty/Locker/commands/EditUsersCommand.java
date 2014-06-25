@@ -2,6 +2,8 @@ package me.michaelkrauty.Locker.commands;
 
 import me.michaelkrauty.Locker.Main;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 
@@ -19,19 +21,15 @@ public class EditUsersCommand {
 
 	public EditUsersCommand(Main instance, Player player, Command cmd, String commandLabel, String[] args) {
 		main = instance;
-		if (main.editing.get(player.getUniqueId().toString()) == null) {
-			if (!main.editQueue.contains(player.getUniqueId().toString())) {
-				main.editQueue.add(player.getUniqueId().toString());
-				player.sendMessage(ChatColor.GRAY + "Now select the locked chest whose users you want to edit");
+		if (player.getTargetBlock(null, 10).getType() != Material.CHEST) {
+				player.sendMessage(ChatColor.GRAY + "Make sure you're looking at a chest within 10 blocks of you");
 				player.sendMessage(ChatColor.GRAY + "Use " + ChatColor.RED + "/locker cancel" + ChatColor.GRAY + " to cancel editing.");
-				return;
-			}
-			player.sendMessage(ChatColor.GRAY + "Already editing a chest's users!");
 			return;
 		} else {
+			Location targetBlockLocation = player.getTargetBlock(null, 10).getLocation();
 			ArrayList<String> userNames = new ArrayList<String>();
 			ArrayList<String> userUUIDS = new ArrayList<String>();
-			for (String uuid : main.getDataFile().getString(main.locationToString(main.editing.get(player.getUniqueId().toString()))).split(",")) {
+			for (String uuid : main.getDataFile().getString(main.locationToString(targetBlockLocation)).split(",")) {
 				UUID uuid1 = UUID.fromString(uuid);
 				String name = main.getServer().getOfflinePlayer(uuid1).getName();
 				userNames.add(name);
@@ -49,7 +47,7 @@ public class EditUsersCommand {
 							return;
 						}
 					}
-					main.getDataFile().set(main.locationToString(main.editing.get(player.getUniqueId().toString())), main.getDataFile().getString(main.locationToString(main.editing.get(player.getUniqueId().toString()))) + "," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString());
+					main.getDataFile().set(main.locationToString(targetBlockLocation), main.getDataFile().getString(main.locationToString(targetBlockLocation)) + "," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString());
 					player.sendMessage(ChatColor.GRAY + "Added the player " + args[2] + " to the locker.");
 				}
 				if (args[1].equalsIgnoreCase("remove")) {
@@ -59,7 +57,7 @@ public class EditUsersCommand {
 							return;
 						}
 					}
-					main.getDataFile().set(main.locationToString(main.editing.get(player.getUniqueId().toString())), main.getDataFile().getString(main.locationToString(main.editing.get(player.getUniqueId().toString()))).replace("," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString(), ""));
+					main.getDataFile().set(main.locationToString(targetBlockLocation), main.getDataFile().getString(main.locationToString(targetBlockLocation)).replace("," + main.getServer().getOfflinePlayer(args[2]).getUniqueId().toString(), ""));
 					player.sendMessage(ChatColor.GRAY + "Removed the player " + args[2] + " from the locker.");
 				}
 			}

@@ -41,10 +41,6 @@ public class PlayerListener implements Listener {
 			int chest1y = chest1Location.getBlockY();
 			int chest1z = chest1Location.getBlockZ();
 		}
-		if (main.editQueue.contains(event.getPlayer().getUniqueId().toString())) {
-			main.editQueue.remove(event.getPlayer().getUniqueId().toString());
-			main.editing.put(event.getPlayer().getUniqueId().toString(), event.getClickedBlock().getLocation());
-		}
 		if (event.getClickedBlock().getType() == Material.CHEST) {
 			if (isProtected(event.getClickedBlock().getLocation())) {
 				if (!playerHasAccess(event.getPlayer(), event.getClickedBlock().getLocation())) {
@@ -70,10 +66,6 @@ public class PlayerListener implements Listener {
 		int y2 = chest2.getBlockY();
 		int z2 = chest2.getBlockZ();
 		main.getDataFile().set(world1 + "," + x1 + "," + y1 + "," + z1 + "," + world2 + "," + x2 + "," + y2 + "," + z2, player.getUniqueId().toString());
-	}
-
-	private void removeChest(Location loc) {
-
 	}
 
 	private boolean isProtected(Location loc) {

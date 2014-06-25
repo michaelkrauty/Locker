@@ -24,8 +24,6 @@ public class Main extends JavaPlugin {
 
 	public static ArrayList<String> createQueue = new ArrayList<String>();
 	public static ArrayList<String> delQueue = new ArrayList<String>();
-	public static ArrayList<String> editQueue = new ArrayList<String>();
-	public static HashMap<String, Location> editing = new HashMap<String, Location>();
 
 	public void onEnable() {
 		main = this;
