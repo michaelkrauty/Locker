@@ -3,8 +3,11 @@ package me.michaelkrauty.Locker;
 import me.michaelkrauty.Locker.listeners.BlockListener;
 import me.michaelkrauty.Locker.listeners.PlayerListener;
 import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitScheduler;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +25,19 @@ public class Main extends JavaPlugin {
 	public static DataFile dataFile;
 
 	public void onEnable() {
+		BukkitScheduler scheduler = getServer().getScheduler();
+		scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
+			@Override
+			public void run() {
+				for (String key : dataFile.getKeys("")) {
+					String[] keys = key.split(",");
+					Block block = getServer().getWorld(keys[0]).getBlockAt(Integer.parseInt(keys[1]), Integer.parseInt(keys[2]), Integer.parseInt(keys[3]));
+					if (block.getType() != Material.CHEST) {
+						getDataFile().delete(locationToString(block.getLocation()));
+					}
+				}
+			}
+		}, 0L, 1L);
 		main = this;
 		getCommand("locker").setExecutor(new LockerCommand(this));
 		PluginManager pm = getServer().getPluginManager();

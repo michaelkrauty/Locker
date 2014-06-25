@@ -2,11 +2,13 @@ package me.michaelkrauty.Locker;
 
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.yaml.snakeyaml.tokens.KeyToken;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created on 6/24/2014.
@@ -57,6 +59,10 @@ public class DataFile {
 
 	public String getString(String path) {
 		return data.getString(path);
+	}
+
+	public Set<String> getKeys(String path) {
+		return data.getConfigurationSection(path).getKeys(true);
 	}
 
 	public void delete(String path) {
