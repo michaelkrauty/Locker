@@ -53,12 +53,12 @@
       <file leaf-file-name="EditUsersCommand.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17555939" vertical-offset="306" max-vertical-offset="1207">
-              <caret line="24" column="191" selection-start-line="24" selection-start-column="191" selection-end-line="24" selection-end-column="191" />
+            <state vertical-scroll-proportion="0.23407917" vertical-offset="357" max-vertical-offset="1275">
+              <caret line="29" column="80" selection-start-line="29" selection-start-column="80" selection-end-line="29" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#937#945#0" expanded="true" />
-                <element signature="e#995#1003#0" expanded="true" />
+                <element signature="e#1114#1122#0" expanded="true" />
+                <element signature="e#1172#1180#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -568,7 +568,11 @@
       <created>1403677380709</created>
       <updated>1403677380709</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <created>1403677534694</created>
+      <updated>1403677534694</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -826,12 +830,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17555939" vertical-offset="306" max-vertical-offset="1207">
-          <caret line="24" column="191" selection-start-line="24" selection-start-column="191" selection-end-line="24" selection-end-column="191" />
+        <state vertical-scroll-proportion="0.23407917" vertical-offset="357" max-vertical-offset="1275">
+          <caret line="29" column="80" selection-start-line="29" selection-start-column="80" selection-end-line="29" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#937#945#0" expanded="true" />
-            <element signature="e#995#1003#0" expanded="true" />
+            <element signature="e#1114#1122#0" expanded="true" />
+            <element signature="e#1172#1180#0" expanded="true" />
           </folding>
         </state>
       </provider>

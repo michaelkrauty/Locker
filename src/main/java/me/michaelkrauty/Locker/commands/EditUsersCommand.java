@@ -26,6 +26,10 @@ public class EditUsersCommand {
 			return;
 		} else {
 			Location targetBlockLocation = player.getTargetBlock(null, 10).getLocation();
+			if (main.getDataFile().getString(main.locationToString(targetBlockLocation)) == null) {
+				player.sendMessage(ChatColor.GRAY + "That chest isn't locked.");
+				return;
+			}
 			ArrayList<String> userNames = new ArrayList<String>();
 			ArrayList<String> userUUIDS = new ArrayList<String>();
 			for (String uuid : main.getDataFile().getString(main.locationToString(targetBlockLocation)).split(",")) {
