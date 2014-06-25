@@ -31,7 +31,7 @@ public class PlayerListener implements Listener {
 
 	@EventHandler
 	public void onPlayerInteract(PlayerInteractEvent event) {
-		log.info("interact");
+		// event.getPlayer().sendMessage(ChatColor.GRAY + "https://sessionserver.mojang.com/session/minecraft/profile/" + event.getPlayer().getUniqueId().toString());
 		if (main.createQueue.contains(event.getPlayer().getUniqueId().toString())) {
 			main.createQueue.remove(event.getPlayer().getUniqueId().toString());
 
@@ -46,9 +46,7 @@ public class PlayerListener implements Listener {
 			main.editing.put(event.getPlayer().getUniqueId().toString(), event.getClickedBlock().getLocation());
 		}
 		if (event.getClickedBlock().getType() == Material.CHEST) {
-			log.info("chest clicked");
 			if (isProtected(event.getClickedBlock().getLocation())) {
-				log.info("chest is protected");
 				if (!playerHasAccess(event.getPlayer(), event.getClickedBlock().getLocation())) {
 					event.getPlayer().sendMessage(ChatColor.GRAY + "This chest is owned by " + getChestOwner(event.getClickedBlock().getLocation()));
 					event.setCancelled(true);

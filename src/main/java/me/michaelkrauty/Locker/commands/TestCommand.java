@@ -1,8 +1,6 @@
 package me.michaelkrauty.Locker.commands;
 
 import me.michaelkrauty.Locker.Main;
-import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 
