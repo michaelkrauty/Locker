@@ -40,6 +40,7 @@ public class EditUsersCommand {
 			userUUIDS.add(uuid1.toString());
 		}
 		if (args.length < 3) {
+			player.sendMessage(ChatColor.GRAY + "Expires in: " + main.getDataFile().getInt(main.locationToString(targetBlockLocation) + ".expiry") + " minutes.");
 			player.sendMessage(ChatColor.GRAY + "Users: " + userNames.toString());
 			player.sendMessage(ChatColor.GRAY + "Add/Remove players with " + ChatColor.RED + "/locker users " + ChatColor.GRAY + "<" + ChatColor.GREEN + "add" + ChatColor.GRAY + "/" + ChatColor.GREEN + "remove" + ChatColor.GRAY + "> <" + ChatColor.GREEN + "user" + ChatColor.GRAY + ">" + ChatColor.GRAY + ".");
 			return;

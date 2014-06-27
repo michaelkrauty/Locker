@@ -46,14 +46,24 @@ public class DataFile {
 		}
 	}
 
-	public void set(String path, String str) {
-		data.set(path, str);
+	public void set(String path, String value) {
+		data.set(path, value);
+		save();
+		reload();
+	}
+
+	public void set(String path, int value) {
+		data.set(path, value);
 		save();
 		reload();
 	}
 
 	public String getString(String path) {
 		return data.getString(path);
+	}
+
+	public int getInt(String path) {
+		return data.getInt(path);
 	}
 
 	public Set<String> getKeys(String path) {

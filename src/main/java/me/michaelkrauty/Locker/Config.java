@@ -2,7 +2,7 @@ package me.michaelkrauty.Locker;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import java.io.File;
+import java.io.*;
 import java.util.Set;
 
 /**
@@ -12,10 +12,13 @@ import java.util.Set;
  */
 public class Config {
 
+	private Main main;
+
 	private File configFile = new File(Main.main.getDataFolder() + "/config.yml");
 	private YamlConfiguration config = new YamlConfiguration();
 
-	public Config() {
+	public Config(Main instance) {
+		main = instance;
 		checkFile();
 		reload();
 	}
@@ -24,6 +27,14 @@ public class Config {
 		if (!configFile.exists()) {
 			try {
 				configFile.createNewFile();
+				InputStream input = main.getResource("config.yml");
+				OutputStream output = new FileOutputStream(configFile);
+				byte[] buffer = new byte[1024];
+				int bytesRead;
+				while ((bytesRead = input.read(buffer)) > 0) {
+					output.write(buffer, 0, bytesRead);
+				}
+				output.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -54,6 +65,10 @@ public class Config {
 
 	public String getString(String path) {
 		return config.getString(path);
+	}
+
+	public int getInt(String path) {
+		return config.getInt(path);
 	}
 
 	public Set<String> getKeys(String path) {

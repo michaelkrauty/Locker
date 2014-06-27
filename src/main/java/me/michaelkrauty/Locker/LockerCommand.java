@@ -4,7 +4,6 @@ import me.michaelkrauty.Locker.commands.CreateCommand;
 import me.michaelkrauty.Locker.commands.EditUsersCommand;
 import me.michaelkrauty.Locker.commands.HelpCommand;
 import me.michaelkrauty.Locker.commands.RemoveCommand;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -47,7 +46,7 @@ public class LockerCommand implements CommandExecutor {
 			new RemoveCommand(main, player, cmd, commandLabel, args);
 			return true;
 		}
-		if (args[0].equalsIgnoreCase("users") || args[0].equalsIgnoreCase("user") || args[0].equalsIgnoreCase("owner") || args[0].equalsIgnoreCase("friends") || args[0].equalsIgnoreCase("players") || args[0].equalsIgnoreCase("allowed")) {
+		if (args[0].equalsIgnoreCase("users") || args[0].equalsIgnoreCase("user") || args[0].equalsIgnoreCase("owner") || args[0].equalsIgnoreCase("friends") || args[0].equalsIgnoreCase("players") || args[0].equalsIgnoreCase("allowed") || args[0].equalsIgnoreCase("info")) {
 			new EditUsersCommand(main, player, cmd, commandLabel, args);
 			return true;
 		}

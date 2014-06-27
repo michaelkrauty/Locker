@@ -32,6 +32,7 @@ public class CreateCommand {
 		}
 		main.getDataFile().set(main.locationToString(targetBlockLocation) + ".owner", player.getUniqueId().toString());
 		main.getDataFile().set(main.locationToString(targetBlockLocation) + ".users", player.getUniqueId().toString());
+		main.getDataFile().set(main.locationToString(targetBlockLocation) + ".expiry", main.getConfigFile().getInt("chest_expiry"));
 		World w = targetBlockLocation.getWorld();
 		int x = targetBlockLocation.getBlockX();
 		int y = targetBlockLocation.getBlockY();
@@ -40,21 +41,25 @@ public class CreateCommand {
 			Location loc = new Location(w, x + 1, y, z);
 			main.getDataFile().set(main.locationToString(loc) + ".owner", player.getUniqueId().toString());
 			main.getDataFile().set(main.locationToString(loc) + ".users", player.getUniqueId().toString());
+			main.getDataFile().set(main.locationToString(loc) + ".expiry", main.getConfigFile().getInt("chest_expiry"));
 		}
 		if (w.getBlockAt(x - 1, y, z).getType() == Material.CHEST) {
 			Location loc = new Location(w, x - 1, y, z);
 			main.getDataFile().set(main.locationToString(loc) + ".owner", player.getUniqueId().toString());
 			main.getDataFile().set(main.locationToString(loc) + ".users", player.getUniqueId().toString());
+			main.getDataFile().set(main.locationToString(loc) + ".expiry", main.getConfigFile().getInt("chest_expiry"));
 		}
 		if (w.getBlockAt(x, y, z + 1).getType() == Material.CHEST) {
 			Location loc = new Location(w, x, y, z + 1);
 			main.getDataFile().set(main.locationToString(loc) + ".owner", player.getUniqueId().toString());
 			main.getDataFile().set(main.locationToString(loc) + ".users", player.getUniqueId().toString());
+			main.getDataFile().set(main.locationToString(loc) + ".expiry", main.getConfigFile().getInt("chest_expiry"));
 		}
 		if (w.getBlockAt(x, y, z - 1).getType() == Material.CHEST) {
 			Location loc = new Location(w, x, y, z - 1);
 			main.getDataFile().set(main.locationToString(loc) + ".owner", player.getUniqueId().toString());
 			main.getDataFile().set(main.locationToString(loc) + ".users", player.getUniqueId().toString());
+			main.getDataFile().set(main.locationToString(loc) + ".expiry", main.getConfigFile().getInt("chest_expiry"));
 		}
 		player.sendMessage(ChatColor.GRAY + "You successfully locked that chest.");
 	}
