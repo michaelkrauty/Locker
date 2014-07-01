@@ -7,9 +7,6 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitScheduler;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 /**
  * Created on 6/24/2014.
  *
