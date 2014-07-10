@@ -30,7 +30,7 @@ public class RemoveCommand {
 			player.sendMessage(ChatColor.GRAY + "That chest isn't locked!");
 			return;
 		}
-		if (!main.getDataFile().getString(main.locationToString(targetBlockLocation) + ".owner").equals(player.getUniqueId().toString())) {
+		if (!player.hasPermission("locker.admin") || !main.getDataFile().getString(main.locationToString(targetBlockLocation) + ".owner").equals(player.getUniqueId().toString())) {
 			player.sendMessage(ChatColor.GRAY + "You don't own that chest!");
 			return;
 		}

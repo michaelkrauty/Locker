@@ -45,7 +45,7 @@ public class PlayerListener implements Listener {
 	}
 
 	private boolean playerHasAccess(Player player, Location loc) {
-		boolean access = false;
+		boolean access = player.hasPermission("locker.admin");
 		for (String str : main.getDataFile().getString(main.locationToString(loc) + ".users").split(",")) {
 			if (str.equalsIgnoreCase(player.getUniqueId().toString())) {
 				access = true;

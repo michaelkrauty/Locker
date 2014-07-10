@@ -45,7 +45,7 @@ public class EditUsersCommand {
 			player.sendMessage(ChatColor.GRAY + "Add/Remove players with " + ChatColor.RED + "/locker users " + ChatColor.GRAY + "<" + ChatColor.GREEN + "add" + ChatColor.GRAY + "/" + ChatColor.GREEN + "remove" + ChatColor.GRAY + "> <" + ChatColor.GREEN + "user" + ChatColor.GRAY + ">" + ChatColor.GRAY + ".");
 			return;
 		}
-		if (!main.getDataFile().getString(main.locationToString(targetBlockLocation) + ".owner").equals(player.getUniqueId().toString())) {
+		if (!player.hasPermission("locker.admin") || !main.getDataFile().getString(main.locationToString(targetBlockLocation) + ".owner").equals(player.getUniqueId().toString())) {
 			player.sendMessage(ChatColor.GRAY + "You don't own that locker!");
 			return;
 		}

@@ -6,3 +6,7 @@ commands:
   locker:
     description: The locker command
     usage: /locker <args>
+permissions:
+  locker.admin:
+    description: Locker admin permission
+    default: op
