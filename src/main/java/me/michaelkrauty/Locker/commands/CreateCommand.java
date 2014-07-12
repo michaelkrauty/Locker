@@ -61,6 +61,6 @@ public class CreateCommand {
 			main.getDataFile().set(main.locationToString(loc) + ".users", player.getUniqueId().toString());
 			main.getDataFile().set(main.locationToString(loc) + ".expiry", main.getConfigFile().getInt("chest_expiry"));
 		}
-		player.sendMessage(ChatColor.GRAY + "You successfully locked that chest.");
+		player.sendMessage(ChatColor.GRAY + "Chest locked. " + ChatColor.RED + "Your chest protection will expire in" + ChatColor.DARK_RED + "30 Days " + ChatColor.RED + ".");
 	}
 }
