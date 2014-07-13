@@ -20,6 +20,9 @@ public class ScheduledTasks {
 	public void checkChests() {
 		try {
 			for (Locker locker : main.lockers) {
+				if (locker.getLocation().getWorld().getBlockAt(locker.getLocation()) == null) {
+					locker.delete();
+				}
 				if (locker.getLocation().getWorld().getBlockAt(locker.getLocation()).getType() != Material.CHEST) {
 					locker.delete();
 				}
