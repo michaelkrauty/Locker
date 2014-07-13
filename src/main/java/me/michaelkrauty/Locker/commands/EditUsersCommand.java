@@ -49,22 +49,22 @@ public class EditUsersCommand {
 				if (w.getBlockAt(x + 1, y, z).getType() == Material.CHEST) {
 					Location loc = new Location(w, x + 1, y, z);
 					if (main.getLocker(loc) != null)
-						main.getLocker(loc).addUser(main.getServer().getOfflinePlayer(args[2]).getUniqueId());
+					main.copyLocker(targetBlockLocation, loc);
 				}
 				if (w.getBlockAt(x - 1, y, z).getType() == Material.CHEST) {
 					Location loc = new Location(w, x - 1, y, z);
 					if (main.getLocker(loc) != null)
-						main.getLocker(loc).addUser(main.getServer().getOfflinePlayer(args[2]).getUniqueId());
+						main.copyLocker(targetBlockLocation, loc);
 				}
 				if (w.getBlockAt(x, y, z + 1).getType() == Material.CHEST) {
 					Location loc = new Location(w, x, y, z + 1);
 					if (main.getLocker(loc) != null)
-						main.getLocker(loc).addUser(main.getServer().getOfflinePlayer(args[2]).getUniqueId());
+						main.copyLocker(targetBlockLocation, loc);
 				}
 				if (w.getBlockAt(x, y, z - 1).getType() == Material.CHEST) {
 					Location loc = new Location(w, x, y, z - 1);
 					if (main.getLocker(loc) != null)
-						main.getLocker(loc).addUser(main.getServer().getOfflinePlayer(args[2]).getUniqueId());
+						main.copyLocker(targetBlockLocation, loc);
 				}
 
 

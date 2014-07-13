@@ -63,7 +63,7 @@ public class Main extends JavaPlugin {
 	}
 
 	public void loadLockers() {
-		for (File file : new File(getDataFolder() + "/lockers").listFiles()) {
+		for (File file : getDataFolder().listFiles()) {
 			String locString = file.getName().split("\\.")[0];
 			String[] loc = locString.split(",");
 			lockers.add(new Locker(this, new Location(getServer().getWorld(loc[0]), Integer.parseInt(loc[1]), Integer.parseInt(loc[2]), Integer.parseInt(loc[3]))));
