@@ -24,7 +24,6 @@
     </dependencies>
 
     <build>
-        <directory>${project.basedir}/target/LockerTest/plugins</directory>
         <finalName>Locker</finalName>
     </build>
 

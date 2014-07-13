@@ -30,9 +30,11 @@ public class RemoveCommand {
 			player.sendMessage(ChatColor.GRAY + "That chest isn't locked!");
 			return;
 		}
-		if (!player.hasPermission("locker.admin") || !main.getDataFile().getString(main.locationToString(targetBlockLocation) + ".owner").equals(player.getUniqueId().toString())) {
-			player.sendMessage(ChatColor.GRAY + "You don't own that chest!");
-			return;
+		if (!player.hasPermission("locker.admin")) {
+			if (!main.getDataFile().getString(main.locationToString(targetBlockLocation) + ".owner").equals(player.getUniqueId().toString())) {
+				player.sendMessage(ChatColor.GRAY + "You don't own that chest!");
+				return;
+			}
 		}
 		main.getDataFile().delete(main.locationToString(targetBlockLocation));
 		World w = targetBlockLocation.getWorld();
