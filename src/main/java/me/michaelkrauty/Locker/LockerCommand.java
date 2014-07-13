@@ -33,29 +33,29 @@ public class LockerCommand implements CommandExecutor {
 		}
 		Player player = (Player) sender;
 		if (args.length < 1) {
-			new HelpCommand(main, player, cmd, commandLabel, args);
+			new HelpCommand(player);
 			return true;
 		}
 
 		/** locker commands */
 		if (args[0].equalsIgnoreCase("create") || args[0].equalsIgnoreCase("lock") || args[0].equalsIgnoreCase("claim")) {
-			new CreateCommand(main, player, cmd, commandLabel, args);
+			new CreateCommand(sender, main);
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("delete") || args[0].equalsIgnoreCase("del") || args[0].equalsIgnoreCase("remove") || args[0].equalsIgnoreCase("unlock") || args[0].equalsIgnoreCase("unclaim")) {
-			new RemoveCommand(main, player, cmd, commandLabel, args);
+			new RemoveCommand(sender, main);
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("users") || args[0].equalsIgnoreCase("user") || args[0].equalsIgnoreCase("owner") || args[0].equalsIgnoreCase("friends") || args[0].equalsIgnoreCase("players") || args[0].equalsIgnoreCase("allowed") || args[0].equalsIgnoreCase("info")) {
-			new EditUsersCommand(main, player, cmd, commandLabel, args);
+			new EditUsersCommand(sender, args, main);
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("help")) {
-			new HelpCommand(main, player, cmd, commandLabel, args);
+			new HelpCommand(player);
 			return true;
 		}
 
-		new HelpCommand(main, player, cmd, commandLabel, args);
+		new HelpCommand(player);
 		return true;
 	}
 }

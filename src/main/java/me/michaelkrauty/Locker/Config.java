@@ -2,7 +2,10 @@ package me.michaelkrauty.Locker;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Set;
 
 /**

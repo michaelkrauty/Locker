@@ -1,12 +1,16 @@
 package me.michaelkrauty.Locker.listeners;
 
+import me.michaelkrauty.Locker.Locker;
 import me.michaelkrauty.Locker.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 /**
@@ -24,33 +28,52 @@ public class PlayerListener implements Listener {
 
 	@EventHandler
 	public void onPlayerInteract(PlayerInteractEvent event) {
-		try {
-			if (event.getClickedBlock().getType() == Material.CHEST) {
-				if (isProtected(event.getClickedBlock().getLocation())) {
-					if (!playerHasAccess(event.getPlayer(), event.getClickedBlock().getLocation())) {
-						event.getPlayer().sendMessage(ChatColor.GRAY + "This chest is owned by " + main.getDataFile().getString(event.getClickedBlock().getLocation() + ".owner"));
-						event.setCancelled(true);
-					}
+		Block clickedBlock = event.getClickedBlock();
+		if (clickedBlock == null)
+			return;
+		if (clickedBlock.getType() == Material.CHEST) {
+			if (main.lockerExists(clickedBlock.getLocation())) {
+				Locker locker = main.getLocker(clickedBlock.getLocation());
+				if (!locker.userHasAccess(event.getPlayer().getUniqueId())) {
+					event.getPlayer().sendMessage(ChatColor.GRAY + "This chest is owned by " + main.getServer().getOfflinePlayer(main.getLocker(clickedBlock.getLocation()).getOwner()).getName());
+					event.setCancelled(true);
+					return;
 				}
+				return;
 			}
-		} catch (Exception ignored) {
+			return;
 		}
-	}
-
-	private boolean isProtected(Location loc) {
-		if (main.getDataFile().getString(main.locationToString(loc) + ".owner") != null) {
-			return true;
-		}
-		return false;
-	}
-
-	private boolean playerHasAccess(Player player, Location loc) {
-		boolean access = player.hasPermission("locker.admin");
-		for (String str : main.getDataFile().getString(main.locationToString(loc) + ".users").split(",")) {
-			if (str.equalsIgnoreCase(player.getUniqueId().toString())) {
-				access = true;
+		if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+			Block block = event.getClickedBlock().getWorld().getBlockAt(event.getClickedBlock().getX() + event.getBlockFace().getModX(), event.getClickedBlock().getY() + event.getBlockFace().getModY(), event.getClickedBlock().getZ() + event.getBlockFace().getModZ());
+			Location blockLocation = block.getLocation();
+			World w = blockLocation.getWorld();
+			int x = blockLocation.getBlockX();
+			int y = blockLocation.getBlockY();
+			int z = blockLocation.getBlockZ();
+			if (w.getBlockAt(x + 1, y, z).getType() == Material.CHEST) {
+				Location loc = new Location(w, x + 1, y, z);
+				if (main.getLocker(loc) != null)
+					main.copyLocker(loc, blockLocation);
+				return;
+			}
+			if (w.getBlockAt(x - 1, y, z).getType() == Material.CHEST) {
+				Location loc = new Location(w, x - 1, y, z);
+				if (main.getLocker(loc) != null)
+					main.copyLocker(loc, blockLocation);
+				return;
+			}
+			if (w.getBlockAt(x, y, z + 1).getType() == Material.CHEST) {
+				Location loc = new Location(w, x, y, z + 1);
+				if (main.getLocker(loc) != null)
+					main.copyLocker(loc, blockLocation);
+				return;
+			}
+			if (w.getBlockAt(x, y, z - 1).getType() == Material.CHEST) {
+				Location loc = new Location(w, x, y, z - 1);
+				if (main.getLocker(loc) != null)
+					main.copyLocker(loc, blockLocation);
+				return;
 			}
 		}
-		return access;
 	}
 }
