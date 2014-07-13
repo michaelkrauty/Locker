@@ -44,8 +44,8 @@
       <file leaf-file-name="ScheduledTasks.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/ScheduledTasks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5255376" vertical-offset="0" max-vertical-offset="782">
-              <caret line="25" column="90" selection-start-line="25" selection-start-column="90" selection-end-line="25" selection-end-column="90" />
+            <state vertical-scroll-proportion="0.84543014" vertical-offset="0" max-vertical-offset="782">
+              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
               <folding>
                 <element signature="e#238#239#0" expanded="true" />
                 <element signature="e#260#261#0" expanded="true" />
@@ -676,7 +676,11 @@
       <created>1405277790374</created>
       <updated>1405277790374</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="remove locker if block is null">
+      <created>1405280049617</created>
+      <updated>1405280049617</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -733,7 +737,8 @@
     <MESSAGE value="implement locker objects + rework data saving" />
     <MESSAGE value="load lockers on startup" />
     <MESSAGE value="fix adding duplicate users to locker" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix adding duplicate users to locker" />
+    <MESSAGE value="remove locker if block is null" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove locker if block is null" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1136,8 +1141,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/ScheduledTasks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5255376" vertical-offset="0" max-vertical-offset="782">
-          <caret line="25" column="90" selection-start-line="25" selection-start-column="90" selection-end-line="25" selection-end-column="90" />
+        <state vertical-scroll-proportion="0.84543014" vertical-offset="0" max-vertical-offset="782">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
           <folding>
             <element signature="e#238#239#0" expanded="true" />
             <element signature="e#260#261#0" expanded="true" />

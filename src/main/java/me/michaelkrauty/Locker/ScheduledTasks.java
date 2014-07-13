@@ -32,11 +32,11 @@ public class ScheduledTasks {
 	}
 
 	public void checkExpiry() {
-		try {
-			for (Locker locker : main.lockers) {
-				Date lastInteract = new Date(locker.getLastInteract());
-			}
-		} catch (Exception ignored) {
-		}
+		// try {
+		//	for (Locker locker : main.lockers) {
+		//		Date lastInteract = new Date(locker.getLastInteract());
+		//	}
+		//} catch (Exception ignored) {
+		//}
 	}
 }
