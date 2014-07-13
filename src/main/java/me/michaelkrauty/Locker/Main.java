@@ -30,6 +30,7 @@ public class Main extends JavaPlugin {
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(new PlayerListener(this), this);
 		checkDataFolder();
+		loadLockers();
 		scheduledTasks = new ScheduledTasks(this);
 		final BukkitScheduler scheduler = getServer().getScheduler();
 		scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
