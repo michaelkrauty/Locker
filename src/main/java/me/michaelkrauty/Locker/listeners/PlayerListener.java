@@ -43,7 +43,6 @@ public class PlayerListener implements Listener {
 						main.copyLocker(loc1, clickedBlock.getLocation());
 						main.copying.remove(event.getPlayer());
 						event.getPlayer().sendMessage(ChatColor.GRAY + "Successfully copied the locker.");
-						event.setCancelled(true);
 
 						Material blockType = event.getClickedBlock().getType();
 						Location targetBlockLocation = event.getClickedBlock().getLocation();
@@ -70,10 +69,11 @@ public class PlayerListener implements Listener {
 								main.copyLocker(loc1, loc);
 							}
 						}
-
+						event.setCancelled(true);
 						return;
 					}
 					event.getPlayer().sendMessage(ChatColor.GRAY + "That locker already exists! Locker still in clipboard.");
+					event.setCancelled(true);
 					return;
 				}
 			}
