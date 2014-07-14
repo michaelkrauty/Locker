@@ -41,7 +41,7 @@ public class CopyCommand {
 		}
 		main.copying.put(player, targetBlockLocation);
 		player.sendMessage(ChatColor.GRAY + "Copied to clipboard! Now click the container you want to lock");
-		player.sendMessage(ChatColor.GRAY + "Use " + ChatColor.GREEN + "/locker cancel" + ChatColor.GRAY + "to cancel.");
+		player.sendMessage(ChatColor.GRAY + "Use " + ChatColor.GREEN + "/locker cancel" + ChatColor.GRAY + " to cancel.");
 		return;
 	}
 }
