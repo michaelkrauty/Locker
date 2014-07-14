@@ -1,9 +1,6 @@
 package me.michaelkrauty.Locker;
 
-import me.michaelkrauty.Locker.commands.CreateCommand;
-import me.michaelkrauty.Locker.commands.EditUsersCommand;
-import me.michaelkrauty.Locker.commands.HelpCommand;
-import me.michaelkrauty.Locker.commands.RemoveCommand;
+import me.michaelkrauty.Locker.commands.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -38,16 +35,24 @@ public class LockerCommand implements CommandExecutor {
 		}
 
 		/** locker commands */
-		if (args[0].equalsIgnoreCase("create") || args[0].equalsIgnoreCase("lock") || args[0].equalsIgnoreCase("claim")) {
+		if (args[0].equalsIgnoreCase("create") || args[0].equalsIgnoreCase("lock") || args[0].equalsIgnoreCase("claim") || args[0].equalsIgnoreCase("l")) {
 			new CreateCommand(sender, main);
 			return true;
 		}
-		if (args[0].equalsIgnoreCase("delete") || args[0].equalsIgnoreCase("del") || args[0].equalsIgnoreCase("remove") || args[0].equalsIgnoreCase("unlock") || args[0].equalsIgnoreCase("unclaim")) {
+		if (args[0].equalsIgnoreCase("delete") || args[0].equalsIgnoreCase("del") || args[0].equalsIgnoreCase("remove") || args[0].equalsIgnoreCase("unlock") || args[0].equalsIgnoreCase("unclaim") || args[0].equalsIgnoreCase("d")) {
 			new RemoveCommand(sender, main);
 			return true;
 		}
-		if (args[0].equalsIgnoreCase("users") || args[0].equalsIgnoreCase("user") || args[0].equalsIgnoreCase("owner") || args[0].equalsIgnoreCase("friends") || args[0].equalsIgnoreCase("players") || args[0].equalsIgnoreCase("allowed") || args[0].equalsIgnoreCase("info")) {
+		if (args[0].equalsIgnoreCase("users") || args[0].equalsIgnoreCase("user") || args[0].equalsIgnoreCase("owner") || args[0].equalsIgnoreCase("friends") || args[0].equalsIgnoreCase("players") || args[0].equalsIgnoreCase("allowed") || args[0].equalsIgnoreCase("info") || args[0].equalsIgnoreCase("u")) {
 			new EditUsersCommand(sender, args, main);
+			return true;
+		}
+		if (args[0].equalsIgnoreCase("copy") || args[0].equalsIgnoreCase("c")) {
+			new CopyCommand(sender, main);
+			return true;
+		}
+		if (args[0].equalsIgnoreCase("cancel")) {
+			new CancelCommand(sender, main);
 			return true;
 		}
 		if (args[0].equalsIgnoreCase("help")) {

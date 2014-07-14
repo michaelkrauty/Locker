@@ -35,6 +35,47 @@ public class PlayerListener implements Listener {
 				|| clickedBlock.getType() == Material.TRAPPED_CHEST
 				|| clickedBlock.getType() == Material.FURNACE
 				|| clickedBlock.getType() == Material.BURNING_FURNACE) {
+			if (!main.copying.isEmpty()) {
+				if (main.copying.get(event.getPlayer()) != null) {
+					if (main.getLocker(event.getClickedBlock().getLocation()) == null) {
+						Location loc1 = main.copying.get(event.getPlayer());
+						main.copyLocker(loc1, clickedBlock.getLocation());
+						main.copying.remove(event.getPlayer());
+						event.getPlayer().sendMessage(ChatColor.GRAY + "Successfully copied the locker.");
+						event.setCancelled(true);
+
+						Material blockType = event.getClickedBlock().getType();
+						Location targetBlockLocation = event.getClickedBlock().getLocation();
+
+						if (blockType == Material.CHEST || blockType == Material.TRAPPED_CHEST) {
+							World w = targetBlockLocation.getWorld();
+							int x = targetBlockLocation.getBlockX();
+							int y = targetBlockLocation.getBlockY();
+							int z = targetBlockLocation.getBlockZ();
+							if (w.getBlockAt(x + 1, y, z).getType() == blockType) {
+								Location loc = new Location(w, x + 1, y, z);
+								main.copyLocker(loc1, loc);
+							}
+							if (w.getBlockAt(x - 1, y, z).getType() == blockType) {
+								Location loc = new Location(w, x - 1, y, z);
+								main.copyLocker(loc1, loc);
+							}
+							if (w.getBlockAt(x, y, z + 1).getType() == blockType) {
+								Location loc = new Location(w, x, y, z + 1);
+								main.copyLocker(loc1, loc);
+							}
+							if (w.getBlockAt(x, y, z - 1).getType() == blockType) {
+								Location loc = new Location(w, x, y, z - 1);
+								main.copyLocker(loc1, loc);
+							}
+						}
+
+						return;
+					}
+					event.getPlayer().sendMessage(ChatColor.GRAY + "That locker already exists! Locker still in clipboard.");
+					return;
+				}
+			}
 			if (main.lockerExists(clickedBlock.getLocation())) {
 				Locker locker = main.getLocker(clickedBlock.getLocation());
 				if (!locker.userHasAccess(event.getPlayer().getUniqueId())) {

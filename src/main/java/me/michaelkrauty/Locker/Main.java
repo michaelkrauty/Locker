@@ -9,6 +9,7 @@ import org.bukkit.scheduler.BukkitScheduler;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
 
 /**
@@ -21,6 +22,8 @@ public class Main extends JavaPlugin {
 	public static Main main;
 
 	public ArrayList<Locker> lockers = new ArrayList<Locker>();
+
+	public HashMap<Player, Location> copying = new HashMap<Player, Location>();
 
 	public static ScheduledTasks scheduledTasks;
 

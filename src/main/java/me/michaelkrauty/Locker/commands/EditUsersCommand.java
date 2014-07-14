@@ -43,6 +43,10 @@ public class EditUsersCommand {
 		}
 		if (args.length == 3) {
 			if (args[1].equalsIgnoreCase("add")) {
+				if (main.getServer().getOfflinePlayer(args[2]) == null) {
+					player.sendMessage(ChatColor.GRAY + "That player doesn't exist!");
+					return;
+				}
 				locker.addUser(main.getServer().getOfflinePlayer(args[2]).getUniqueId());
 
 				if (blockType == Material.CHEST || blockType == Material.TRAPPED_CHEST) {
