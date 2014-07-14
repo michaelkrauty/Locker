@@ -20,36 +20,46 @@ public class CreateCommand {
 		Player player = (Player) sender;
 		Block targetBlock = player.getTargetBlock(null, 10);
 		Location targetBlockLocation = targetBlock.getLocation();
-		if (targetBlock == null || targetBlock.getType() != Material.CHEST) {
-			player.sendMessage(ChatColor.GRAY + "Make sure you're looking at a " + ChatColor.GREEN + "chest" + ChatColor.GRAY + " within " + ChatColor.GREEN + "10 blocks" + ChatColor.GRAY + " of you");
+		Material blockType = targetBlock.getType();
+		if (main.getLocker(targetBlockLocation) != null) {
+			player.sendMessage(ChatColor.GRAY + "That container is already locked.");
 			return;
 		}
-		if (main.getLocker(targetBlockLocation) != null) {
-			player.sendMessage(ChatColor.GRAY + "That chest is already locked.");
+		if (targetBlock == null) {
+			player.sendMessage(ChatColor.GRAY + "Make sure you're looking at a " + ChatColor.GREEN + "container" + ChatColor.GRAY + " within " + ChatColor.GREEN + "10 blocks" + ChatColor.GRAY + " of you");
+			return;
+		}
+		if (blockType != Material.CHEST
+				&& blockType != Material.TRAPPED_CHEST
+				&& blockType != Material.FURNACE
+				&& blockType != Material.BURNING_FURNACE) {
+			player.sendMessage(ChatColor.GRAY + "Make sure you're looking at a " + ChatColor.GREEN + "container" + ChatColor.GRAY + " within " + ChatColor.GREEN + "10 blocks" + ChatColor.GRAY + " of you");
 			return;
 		}
 		main.createLocker(targetBlockLocation, player);
-		World w = targetBlockLocation.getWorld();
-		int x = targetBlockLocation.getBlockX();
-		int y = targetBlockLocation.getBlockY();
-		int z = targetBlockLocation.getBlockZ();
-		if (w.getBlockAt(x + 1, y, z).getType() == Material.CHEST) {
-			Location loc = new Location(w, x + 1, y, z);
-			main.createLocker(loc, player);
+		if (blockType == Material.CHEST || blockType == Material.TRAPPED_CHEST) {
+			World w = targetBlockLocation.getWorld();
+			int x = targetBlockLocation.getBlockX();
+			int y = targetBlockLocation.getBlockY();
+			int z = targetBlockLocation.getBlockZ();
+			if (w.getBlockAt(x + 1, y, z).getType() == blockType) {
+				Location loc = new Location(w, x + 1, y, z);
+				main.createLocker(loc, player);
+			}
+			if (w.getBlockAt(x - 1, y, z).getType() == blockType) {
+				Location loc = new Location(w, x - 1, y, z);
+				main.createLocker(loc, player);
+			}
+			if (w.getBlockAt(x, y, z + 1).getType() == blockType) {
+				Location loc = new Location(w, x, y, z + 1);
+				main.createLocker(loc, player);
+			}
+			if (w.getBlockAt(x, y, z - 1).getType() == blockType) {
+				Location loc = new Location(w, x, y, z - 1);
+				main.createLocker(loc, player);
+			}
 		}
-		if (w.getBlockAt(x - 1, y, z).getType() == Material.CHEST) {
-			Location loc = new Location(w, x - 1, y, z);
-			main.createLocker(loc, player);
-		}
-		if (w.getBlockAt(x, y, z + 1).getType() == Material.CHEST) {
-			Location loc = new Location(w, x, y, z + 1);
-			main.createLocker(loc, player);
-		}
-		if (w.getBlockAt(x, y, z - 1).getType() == Material.CHEST) {
-			Location loc = new Location(w, x, y, z - 1);
-			main.createLocker(loc, player);
-		}
-		player.sendMessage(ChatColor.GRAY + "You successfully locked that chest.");
+		player.sendMessage(ChatColor.GRAY + "You successfully locked that container.");
 		return;
 	}
 }

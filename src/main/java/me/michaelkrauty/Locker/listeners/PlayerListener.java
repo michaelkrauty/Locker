@@ -31,11 +31,14 @@ public class PlayerListener implements Listener {
 		Block clickedBlock = event.getClickedBlock();
 		if (clickedBlock == null)
 			return;
-		if (clickedBlock.getType() == Material.CHEST) {
+		if (clickedBlock.getType() == Material.CHEST
+				|| clickedBlock.getType() == Material.TRAPPED_CHEST
+				|| clickedBlock.getType() == Material.FURNACE
+				|| clickedBlock.getType() == Material.BURNING_FURNACE) {
 			if (main.lockerExists(clickedBlock.getLocation())) {
 				Locker locker = main.getLocker(clickedBlock.getLocation());
 				if (!locker.userHasAccess(event.getPlayer().getUniqueId())) {
-					event.getPlayer().sendMessage(ChatColor.GRAY + "This chest is owned by " + main.getServer().getOfflinePlayer(main.getLocker(clickedBlock.getLocation()).getOwner()).getName());
+					event.getPlayer().sendMessage(ChatColor.GRAY + "This locker is owned by " + main.getServer().getOfflinePlayer(main.getLocker(clickedBlock.getLocation()).getOwner()).getName());
 					event.setCancelled(true);
 					return;
 				}
@@ -50,25 +53,29 @@ public class PlayerListener implements Listener {
 			int x = blockLocation.getBlockX();
 			int y = blockLocation.getBlockY();
 			int z = blockLocation.getBlockZ();
-			if (w.getBlockAt(x + 1, y, z).getType() == Material.CHEST) {
+			if (w.getBlockAt(x + 1, y, z).getType() == Material.CHEST
+					|| w.getBlockAt(x + 1, y, z).getType() == Material.TRAPPED_CHEST) {
 				Location loc = new Location(w, x + 1, y, z);
 				if (main.getLocker(loc) != null)
 					main.copyLocker(loc, blockLocation);
 				return;
 			}
-			if (w.getBlockAt(x - 1, y, z).getType() == Material.CHEST) {
+			if (w.getBlockAt(x - 1, y, z).getType() == Material.CHEST
+					|| w.getBlockAt(x - 1, y, z).getType() == Material.TRAPPED_CHEST) {
 				Location loc = new Location(w, x - 1, y, z);
 				if (main.getLocker(loc) != null)
 					main.copyLocker(loc, blockLocation);
 				return;
 			}
-			if (w.getBlockAt(x, y, z + 1).getType() == Material.CHEST) {
+			if (w.getBlockAt(x, y, z + 1).getType() == Material.CHEST
+					|| w.getBlockAt(x, y, z + 1).getType() == Material.TRAPPED_CHEST) {
 				Location loc = new Location(w, x, y, z + 1);
 				if (main.getLocker(loc) != null)
 					main.copyLocker(loc, blockLocation);
 				return;
 			}
-			if (w.getBlockAt(x, y, z - 1).getType() == Material.CHEST) {
+			if (w.getBlockAt(x, y, z - 1).getType() == Material.CHEST
+					|| w.getBlockAt(x, y, z - 1).getType() == Material.TRAPPED_CHEST) {
 				Location loc = new Location(w, x, y, z - 1);
 				if (main.getLocker(loc) != null)
 					main.copyLocker(loc, blockLocation);

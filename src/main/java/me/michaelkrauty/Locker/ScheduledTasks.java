@@ -23,7 +23,11 @@ public class ScheduledTasks {
 				if (locker.getLocation().getWorld().getBlockAt(locker.getLocation()) == null) {
 					locker.delete();
 				}
-				if (locker.getLocation().getWorld().getBlockAt(locker.getLocation()).getType() != Material.CHEST) {
+				Material blockType = locker.getLocation().getWorld().getBlockAt(locker.getLocation()).getType();
+				if (blockType != Material.CHEST
+						&& blockType != Material.TRAPPED_CHEST
+						&& blockType != Material.FURNACE
+						&& blockType != Material.BURNING_FURNACE) {
 					locker.delete();
 				}
 			}
