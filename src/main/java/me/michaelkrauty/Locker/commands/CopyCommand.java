@@ -35,8 +35,8 @@ public class CopyCommand {
 			player.sendMessage(ChatColor.GRAY + "Make sure you're looking at a " + ChatColor.GREEN + "container" + ChatColor.GRAY + " within " + ChatColor.GREEN + "10 blocks" + ChatColor.GRAY + " of you");
 			return;
 		}
-		if (!main.getLocker(targetBlockLocation).getOwner().equals(player.getUniqueId())) {
-			player.sendMessage(ChatColor.GRAY + "You don't own that locker!");
+		if (!main.getLocker(targetBlockLocation).userHasAccess(player.getUniqueId())) {
+			player.sendMessage(ChatColor.GRAY + "You don't have access to that locker!");
 			return;
 		}
 		main.copying.put(player, targetBlockLocation);

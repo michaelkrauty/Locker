@@ -38,6 +38,7 @@ public class PlayerListener implements Listener {
 			if (!main.copying.isEmpty()) {
 				if (main.copying.get(event.getPlayer()) != null) {
 					if (main.getLocker(event.getClickedBlock().getLocation()) == null) {
+
 						Location loc1 = main.copying.get(event.getPlayer());
 						main.copyLocker(loc1, clickedBlock.getLocation());
 						main.copying.remove(event.getPlayer());

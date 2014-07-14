@@ -34,8 +34,8 @@ public class RemoveCommand {
 			player.sendMessage(ChatColor.GRAY + "That container isn't locked!");
 			return;
 		}
-		if (!locker.userIsOwner(player.getUniqueId())) {
-			player.sendMessage(ChatColor.GRAY + "You don't own that locker!");
+		if (!locker.userHasAccess(player.getUniqueId())) {
+			player.sendMessage(ChatColor.GRAY + "You don't have access to locker!");
 			return;
 		}
 		locker.delete();

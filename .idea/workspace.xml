@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bab39339-cdcc-4b3e-957e-b2a63a14da09" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CancelCommand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CopyCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CopyCommand.java" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CopyCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/LockerCommand.java" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/LockerCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/Main.java" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/listeners/PlayerListener.java" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/listeners/PlayerListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/RemoveCommand.java" afterPath="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/RemoveCommand.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Locker.iws" />
@@ -89,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/RemoveCommand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -98,8 +96,8 @@
       <file leaf-file-name="PlayerListener.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/listeners/PlayerListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="2040">
-              <caret line="39" column="88" selection-start-line="39" selection-start-column="88" selection-end-line="39" selection-end-column="88" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="2057">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,8 +116,8 @@
       <file leaf-file-name="CopyCommand.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CopyCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44767442" vertical-offset="134" max-vertical-offset="901">
-              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.9345029" vertical-offset="0" max-vertical-offset="901">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,7 +129,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2312">
-              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+              <caret line="40" column="78" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -174,14 +172,14 @@
         <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/listeners/BlockListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/Locker.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CreateCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/RemoveCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/ScheduledTasks.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/HelpCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CancelCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/LockerCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/listeners/PlayerListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/RemoveCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CopyCommand.java" />
       </list>
     </option>
@@ -701,12 +699,16 @@
       <created>1405322344449</created>
       <updated>1405322344449</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add copy + cancel commands">
+      <created>1405353642125</created>
+      <updated>1405353642125</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1050" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -718,17 +720,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09241453" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09241453" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16987179" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1965812" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19679144" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32941177" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -762,7 +764,8 @@
     <MESSAGE value="comment out unnecessary method&#10;" />
     <MESSAGE value="clean up" />
     <MESSAGE value="trapped chests + furnaces can now be locked" />
-    <option name="LAST_COMMIT_MESSAGE" value="trapped chests + furnaces can now be locked" />
+    <MESSAGE value="add copy + cancel commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="add copy + cancel commands" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1118,14 +1121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/RemoveCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="453" max-vertical-offset="1360">
@@ -1168,16 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2312">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CreateCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1207">
@@ -1190,16 +1175,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/listeners/PlayerListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="2040">
-          <caret line="39" column="88" selection-start-line="39" selection-start-column="88" selection-end-line="39" selection-end-column="88" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="2057">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/RemoveCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/EditUsersCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2312">
+          <caret line="40" column="78" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/michaelkrauty/Locker/commands/CopyCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44767442" vertical-offset="134" max-vertical-offset="901">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.9345029" vertical-offset="0" max-vertical-offset="901">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
