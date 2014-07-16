@@ -43,7 +43,7 @@ public class EditUsersCommand {
 		}
 		if (args.length == 3) {
 			if (args[1].equalsIgnoreCase("add")) {
-				if (!main.getServer().getOfflinePlayer(args[2]).hasPlayedBefore()) {
+				if (!main.getServer().getOfflinePlayer(args[2]).hasPlayedBefore() && !(main.getServer().getPlayer(args[2]) instanceof Player)) {
 					player.sendMessage(ChatColor.GRAY + "That player doesn't exist!");
 					return;
 				}
