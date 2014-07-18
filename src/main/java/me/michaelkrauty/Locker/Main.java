@@ -33,9 +33,15 @@ public class Main extends JavaPlugin {
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(new PlayerListener(this), this);
 		checkDataFolder();
-		loadLockers();
 		scheduledTasks = new ScheduledTasks(this);
 		final BukkitScheduler scheduler = getServer().getScheduler();
+		scheduler.scheduleSyncDelayedTask(this, new Runnable() {
+			@Override
+			public void run() {
+				loadLockers();
+			}
+
+		}, 1L);
 		scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
 			@Override
 			public void run() {
@@ -66,14 +72,18 @@ public class Main extends JavaPlugin {
 	}
 
 	public void loadLockers() {
+		getLogger().info("Loading Lockers...");
+		int lockerCount = 0;
 		for (File file : getDataFolder().listFiles()) {
 			String locString = file.getName().split("\\.")[0];
 			String[] loc = locString.split(",");
 			try {
 				lockers.add(new Locker(this, new Location(getServer().getWorld(loc[0]), Integer.parseInt(loc[1]), Integer.parseInt(loc[2]), Integer.parseInt(loc[3]))));
+				lockerCount++;
 			} catch (ArrayIndexOutOfBoundsException ignored) {
 			}
 		}
+		getLogger().info("Loaded " + lockerCount + " lockers.");
 	}
 
 	public Locker getLocker(Location loc) {
