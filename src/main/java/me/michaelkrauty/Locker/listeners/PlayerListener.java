@@ -79,6 +79,8 @@ public class PlayerListener implements Listener {
 			}
 			if (main.lockerExists(clickedBlock.getLocation())) {
 				Locker locker = main.getLocker(clickedBlock.getLocation());
+				if (event.getPlayer().hasPermission("locker.admin"))
+					return;
 				if (!locker.userHasAccess(event.getPlayer().getUniqueId())) {
 					event.getPlayer().sendMessage(ChatColor.GRAY + "This locker is owned by " + main.getServer().getOfflinePlayer(main.getLocker(clickedBlock.getLocation()).getOwner()).getName());
 					event.setCancelled(true);

@@ -38,8 +38,10 @@ public class EditUsersCommand {
 			return;
 		}
 		if (!locker.userHasAccess(player.getUniqueId())) {
-			player.sendMessage(ChatColor.GRAY + "You don't have access to that locker!");
-			return;
+			if (!player.hasPermission("locker.admin")) {
+				player.sendMessage(ChatColor.GRAY + "You don't have access to that locker!");
+				return;
+			}
 		}
 		if (args.length == 3) {
 			if (args[1].equalsIgnoreCase("add")) {

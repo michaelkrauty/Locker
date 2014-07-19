@@ -35,8 +35,10 @@ public class RemoveCommand {
 			return;
 		}
 		if (!locker.userHasAccess(player.getUniqueId())) {
-			player.sendMessage(ChatColor.GRAY + "You don't have access to locker!");
-			return;
+			if (!player.hasPermission("locker.admin")) {
+				player.sendMessage(ChatColor.GRAY + "You don't have access to locker!");
+				return;
+			}
 		}
 		locker.delete();
 
