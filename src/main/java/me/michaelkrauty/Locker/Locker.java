@@ -93,7 +93,7 @@ public class Locker {
 	}
 
 	public boolean userHasAccess(UUID user) {
-		return users.contains(user);
+		return users.contains(user) || userIsOwner(user);
 	}
 
 	public boolean userIsOwner(UUID user) {

@@ -48,12 +48,6 @@ public class Main extends JavaPlugin {
 				scheduledTasks.checkChests();
 			}
 		}, 0L, 1L);
-		// scheduler.scheduleSyncRepeatingTask(this, new Runnable() {
-		//	@Override
-		//	public void run() {
-		//		scheduledTasks.checkExpiry();
-		//	}
-		//}, 0L, 1200L);
 	}
 
 
