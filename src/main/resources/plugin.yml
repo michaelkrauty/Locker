@@ -7,6 +7,8 @@ commands:
     description: The locker command
     usage: /locker <args>
 permissions:
+  locker.lock:
+    description: Allows creation of lockers
   locker.admin:
     description: Locker admin permission
     default: op

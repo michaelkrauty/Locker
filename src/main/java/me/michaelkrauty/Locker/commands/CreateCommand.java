@@ -21,6 +21,10 @@ public class CreateCommand {
 		Block targetBlock = player.getTargetBlock(null, 10);
 		Location targetBlockLocation = targetBlock.getLocation();
 		Material blockType = targetBlock.getType();
+		if (!player.hasPermission("locker.lock")) {
+			player.sendMessage(ChatColor.RED + "You don't have permission to do that.");
+			return;
+		}
 		if (main.getLocker(targetBlockLocation) != null) {
 			player.sendMessage(ChatColor.GRAY + "That container is already locked.");
 			return;
